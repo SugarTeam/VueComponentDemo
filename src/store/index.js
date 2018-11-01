@@ -1,8 +1,11 @@
 /**
  * Created by hyt on 2017/1/11.
  */
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import containerA from './modules/containerA';
+import containerB from './modules/containerB';
+import containerC from './modules/containerC';
 const UPDATE_CONTAINER_B_ATTR = 'UPDATE_CONTAINER_B_ATTR';
 
 Vue.use(Vuex);
@@ -11,8 +14,7 @@ let i = 0;
 
 const store = new Vuex.Store({
     state: {
-        // 容器B公共属性
-        containerB: { attr: 'containerB attr'}
+  
     },
     mutations:{
         [UPDATE_CONTAINER_B_ATTR](state) {
@@ -25,9 +27,13 @@ const store = new Vuex.Store({
         }
     },
     modules: {
-
+        containerA,
+        containerB,
+        containerC
     }
 });
+
+console.log(store, '=========================')
 
 export default store
 

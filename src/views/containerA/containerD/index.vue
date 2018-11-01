@@ -1,14 +1,12 @@
 <template>
   <div class="container">
-      容器组件A
-    <ContainerD/>
+      容器组件D
     <ViewComponent :priveAttr="priveAttr" :commonAttr="commonAttr" :containerBAttr="containerB.attr" @on-update="onUpdate"/>
   </div>
 </template>
 <script>
 import { mapState, mapActions } from 'vuex';
 import ViewComponent from './view.vue';
-import ContainerD from './containerD/index.vue';
 
 export default {
     props: {
@@ -22,14 +20,8 @@ export default {
             priveAttr: 'prive attr',
         }
     },
-    mounted() {
-        console.log(this.containerA);
-        console.log(this.containerB);
-        console.log(this.containerC);
-        console.log(this.containerC.ContainerD);
-    },
     computed: {
-        ...mapState(['containerA', 'containerB', 'containerC'])
+        ...mapState(['containerB'])
     },
     methods: {
         ...mapActions(['updateContainerB']),
@@ -39,7 +31,6 @@ export default {
     },
     components: {
         ViewComponent,
-        ContainerD
     }
 }
 </script>
