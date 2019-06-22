@@ -1,6 +1,6 @@
 # vue-app
 
-> A Vue.js project
+[关于前端组件化、状态管理规范化的思考](https://juejin.im/post/5bd9ab2b6fb9a0222458be02)
 
 ## Build Setup
 
